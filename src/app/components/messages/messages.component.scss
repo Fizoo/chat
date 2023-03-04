@@ -1,0 +1,12 @@
+@use './../../../scss/variables'  as v;
+
+:host{
+
+}
+.messages{
+  background: v.$color-text;
+  padding: 10px;
+  height: 100%;
+  overflow-y: auto;
+
+}

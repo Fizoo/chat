@@ -1,0 +1,22 @@
+@use './../../../scss/variables' as v;
+@use './../../../scss/mixins' as m;
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: v.$bg-main;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 65%;
+  height: 80%;
+  overflow: hidden;
+  @include m.tablet{
+    width: 90%;
+  }
+}

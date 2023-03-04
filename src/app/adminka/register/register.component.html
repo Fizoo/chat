@@ -1,0 +1,21 @@
+<div class="formWrapper">
+  <span class="logo">Lama Chat</span>
+  <span class="title">Register</span>
+  <form onSubmit={handleSubmit}>
+    <input required type="text" placeholder="display name" />
+    <input required type="email" placeholder="email" />
+    <input required type="password" placeholder="password" />
+    <input required  type="file" id="file" />
+    <label for="file">
+      <img src="" alt="" />
+      <span>Add an avatar</span>
+    </label>
+    <button >Sign up</button>
+<!--    {loading && "Uploading and compressing the image please wait..."}
+    {err && <span>Something went wrong</span>}-->
+  </form>
+  <p>
+    You do have an account?
+    <a routerLink="/admin/login">Login</a>
+  </p>
+</div>

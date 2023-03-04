@@ -1,0 +1,32 @@
+@use './../../../scss/variables' as v;
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: v.$bg-third;
+  height: 50px;
+  padding: 10px;
+  color: v.$color-text;
+  .logo {
+    font-weight: bold;
+  }
+
+  .user{
+    display: flex;
+    gap:10px;
+    img {
+      background: v.$color-text;
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .btn{
+      background: v.$color-btn-bg;
+      color: v.$color-text;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+  }
+}

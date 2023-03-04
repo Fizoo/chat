@@ -1,0 +1,32 @@
+@use './../../../scss/variables' as v;
+
+.input{
+  height: 50px;
+  padding: 10px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  input{
+    width: 100%;
+    color: v.$bg-third;
+    font-size: 18px;
+    &::placeholder{
+      color: lightgray;
+    }
+  }
+
+  .send{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    #file{
+      display: none;
+    }
+    button{
+      color: white;
+      padding: 10px 15px;
+      background: v.$bg-main;
+    }
+  }
+}

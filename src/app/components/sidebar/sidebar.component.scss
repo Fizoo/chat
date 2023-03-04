@@ -1,0 +1,7 @@
+@use './../../../scss/variables' as v;
+
+:host{
+  flex: 1;
+  border-right: 1px solid #3e3c61;
+  background: v.$bg-second;
+}

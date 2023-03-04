@@ -1,0 +1,21 @@
+@use './../../../scss/variables' as v;
+
+.chatInfo{
+  background: v.$color-btn-bg;
+  height: 50px;
+  color:lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  .chatIcons{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    img{
+      height: 24px;
+      cursor: pointer;
+    }
+  }
+
+}

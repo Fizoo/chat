@@ -1,0 +1,9 @@
+@use '../../../scss/variables' as v;
+
+.formContainer{
+  background-color: v.$bg-main;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

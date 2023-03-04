@@ -1,0 +1,50 @@
+@use './../../../scss/variables' as v;
+
+.message{
+  display: flex;
+  gap: 20px;
+  .messageInfo{
+    display: flex;
+    flex-direction: column;
+    color: gray;
+    font-weight: 300;
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      object-fit: cover;
+    }
+  }
+  .messageContent{
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+      p{
+        background: white;
+        padding: 10px 20px;
+        border-radius: 0 10px 10px 10px;
+        max-width: max-content;
+      }
+    img {
+      width: 50%;
+   /*   width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      object-fit: cover;*/
+    }
+  }
+  &.owner{
+    flex-direction: row-reverse;
+  .messageContent{
+    align-items: flex-end;
+    p{
+      background: v.$bg-main;
+      color: white;
+      border-radius: 10px 0 10px 10px;
+    }
+  }
+
+  }
+}
