@@ -1,4 +1,7 @@
 @use './../../../scss/variables' as v;
+@use './../../../scss/mixins' as m;
+
+
 .navbar{
   display: flex;
   align-items: center;
@@ -9,10 +12,15 @@
   color: v.$color-text;
   .logo {
     font-weight: bold;
+    @include m.tablet{
+      display: none;
+    }
+
   }
 
   .user{
     display: flex;
+    align-items: center;
     gap:10px;
     img {
       background: v.$color-text;
@@ -26,6 +34,14 @@
       color: v.$color-text;
       font-size: 10px;
       cursor: pointer;
+      padding: 5px;
+      border-radius:10px ;
+      @include m.tablet{
+        position: absolute;
+        bottom: 10px;
+        padding: 5px 10px;
+        border-radius:10px ;
+      }
     }
 
   }

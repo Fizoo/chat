@@ -36,6 +36,11 @@
           color: rgb(175, 175, 175);
         }
       }
+      small{
+        margin-top:-15px ;
+        color: red;
+
+      }
 
       button {
         background-color: #7b96ec;
@@ -44,6 +49,9 @@
         font-weight: bold;
         border: none;
         cursor: pointer;
+        &:disabled{
+          opacity: 0.5;
+        }
       }
 
       label {
