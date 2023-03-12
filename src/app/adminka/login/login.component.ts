@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FirebaseService} from "../../services/firebase.service";
+import {FirebaseAuthService} from "../../services/firebaseAuth.service";
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup
 
   constructor(private fb: FormBuilder,
-              private firebase: FirebaseService,
+              private fireAuth: FirebaseAuthService,
               private router: Router) {
   }
 
@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
 
     if (this.form.valid) {
       let {email, password} = this.form.value
-      this.firebase.login(email, password).then(() =>
-        this.router.navigate(['/'])
+      this.fireAuth.login(email, password).subscribe(() => this.router.navigate(['/'])
       )
     }
+
   }
 
   get email() {

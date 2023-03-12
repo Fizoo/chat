@@ -8,7 +8,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 
 const routes:Routes=[
   {path:'',component:AdminComponent,children:[
-      {path:'',redirectTo:'/admin',pathMatch:'full'},
+      {path:'',redirectTo:'/admin/login',pathMatch:'full'},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
     ]},

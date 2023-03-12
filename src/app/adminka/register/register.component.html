@@ -1,13 +1,13 @@
 <div class="formWrapper">
-  <span class="logo">Lama Chat</span>
+  <span class="logo">Oleg Chat</span>
   <span class="title">Register</span>
-  <form onSubmit={handleSubmit}>
-    <input required type="text" placeholder="display name" />
-    <input required type="email" placeholder="email" />
-    <input required type="password" placeholder="password" />
-    <input required  type="file" id="file" />
+  <form [formGroup]="form" (ngSubmit)="register($event)">
+    <input formControlName="name" required type="text" placeholder="display name" />
+    <input formControlName="email" required type="email" placeholder="email" />
+    <input formControlName="password" required type="password" placeholder="password" />
+    <input formControlName="avatar" required (change)="uploadFile($event)"  type="file" id="file" />
     <label for="file">
-      <img src="" alt="" />
+      <img src="" alt="" id="myImage"/>
       <span>Add an avatar</span>
     </label>
     <button >Sign up</button>

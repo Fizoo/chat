@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
-import {FirebaseService} from "../../services/firebase.service";
+import {FirebaseAuthService} from "../../services/firebaseAuth.service";
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +9,13 @@ import {FirebaseService} from "../../services/firebase.service";
 })
 export class NavbarComponent {
 
-  constructor(private firebase: FirebaseService,
+  constructor(private firebase: FirebaseAuthService,
               private router: Router
               ) {
   }
 
   logout() {
-      this.firebase.logout().then(()=>{
+      this.firebase.logout().subscribe(()=>{
         this.router.navigate(['/admin/login'])
     })
 

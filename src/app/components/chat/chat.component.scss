@@ -1,15 +1,16 @@
 @use './../../../scss/variables' as v;
 
-
-
 :host {
   flex: 2;
+   display: grid;
+   grid-template-rows: 50px 1fr 50px;
+   height: 100%;
 }
 
 .chat{
-  display: grid;
-  grid-template-rows: 50px 1fr 50px;
-  height: 100%;
+ // display: grid;
+ // grid-template-rows: 50px 1fr 50px;
+ // height: 100%;
 }
 
 
