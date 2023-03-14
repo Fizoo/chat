@@ -1,17 +1,23 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {FirebaseAuthService} from "../../services/firebaseAuth.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
+
+  imgUrl$:Observable<string>
 
   constructor(private firebase: FirebaseAuthService,
               private router: Router
-              ) {
+              ) {}
+
+  ngOnInit(): void {
+    this.imgUrl$=this.firebase.getImgUrl()
   }
 
   logout() {
@@ -20,4 +26,6 @@ export class NavbarComponent {
     })
 
   }
+
+
 }

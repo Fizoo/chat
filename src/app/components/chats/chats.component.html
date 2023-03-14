@@ -1,17 +1,12 @@
-<div class="chats">
-<div class="userChat">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWHMEOdbl48MJgh_wkcw5mclRELGwanEnLOhAixziutb_XLinXNKm2x0AxaP0azRc-Cyg&usqp=CAU" alt="">
-<div class="userChatInfo">
-  <span>Jack</span>
-  <p>Hello</p>
-</div>
-</div>
-
-  <div class="userChat">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWHMEOdbl48MJgh_wkcw5mclRELGwanEnLOhAixziutb_XLinXNKm2x0AxaP0azRc-Cyg&usqp=CAU" alt="">
-    <div class="userChatInfo">
-      <span>Jack</span>
-      <p>Hello</p>
+<div class="chats" >
+  <div *ngFor="let user of users |filter:search " class="userChat" [appSelectedUser]="user" >
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWHMEOdbl48MJgh_wkcw5mclRELGwanEnLOhAixziutb_XLinXNKm2x0AxaP0azRc-Cyg&usqp=CAU"
+      alt="">
+    <div class="userChatInfo"  >
+      <span>{{user.name}}</span>
+      <p>{{user.message[0].text}}</p>
     </div>
   </div>
+
 </div>

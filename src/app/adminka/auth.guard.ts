@@ -9,16 +9,13 @@ import {FirebaseAuthService} from "../services/firebaseAuth.service";
 export class AuthGuard implements CanActivate {
   constructor(private fireAuth:FirebaseAuthService,
               private router:Router) {
-
   }
-
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     console.log(this.fireAuth.isAuth())
     if (this.fireAuth.isAuth()){
-
       return true
     }
     else {
@@ -29,7 +26,6 @@ export class AuthGuard implements CanActivate {
         }
       })
     }
-
     return false;
   }
 

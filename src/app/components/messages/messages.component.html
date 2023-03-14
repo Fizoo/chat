@@ -1,5 +1,6 @@
 
 <div class="messages">
-  <app-message *ngFor="let item of [1,2,3]"></app-message>
+  <app-message
+    *ngFor="let messages of messages$ | async" [item]="messages"></app-message>
 </div>
 

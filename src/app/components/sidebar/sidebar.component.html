@@ -1,3 +1,5 @@
 <app-navbar></app-navbar>
-<app-search></app-search>
-<app-chats></app-chats>
+<app-search ></app-search>
+<app-chats [users]="(users$ | async) || []"
+           [search]="search$ | async"
+></app-chats>

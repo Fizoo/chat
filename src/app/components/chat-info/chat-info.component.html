@@ -1,5 +1,5 @@
 <div class="chatInfo">
-  <span>Kate</span>
+  <span *ngIf="user$ | async as user">{{user.name}}</span>
   <div class="chatIcons">
 
     <img src="assets/img/cam.png" alt="">
