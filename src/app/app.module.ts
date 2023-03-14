@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, Provider} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 
@@ -16,6 +16,14 @@ import {ChatInfoComponent} from './components/chat-info/chat-info.component';
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {environment} from "../environment";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {AuthInterceptor} from "./services/auth.interceptor";
+
+const INTERCEPTORS_PROVIDERS:Provider = {
+  provide:HTTP_INTERCEPTORS,
+  multi:true,
+  useClass:AuthInterceptor
+}
 
 @NgModule({
   declarations: [
@@ -36,8 +44,9 @@ import {environment} from "../environment";
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [INTERCEPTORS_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule {

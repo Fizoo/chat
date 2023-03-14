@@ -29,6 +29,8 @@ export class RegisterComponent implements OnInit{
   register(event: any) {
     event.preventDefault()
     console.log(this.form.value)
+    const {email,password}=this.form.value
+    this.fireAuth.createNewUser(email,password).subscribe()
   }
 
   uploadFile(event:any) {
