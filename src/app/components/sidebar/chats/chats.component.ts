@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy,  Component, Input} from '@angular/core';
-import {Users} from "../../model/users";
+import {Users} from "../../../model/users";
 
 @Component({
   selector: 'app-chats',

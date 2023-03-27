@@ -15,7 +15,6 @@ export class SidebarComponent implements OnInit{
   search$:Observable< string>
 
   constructor(private dataService:FireDatabaseService) {
-
   }
 
   ngOnInit(): void {

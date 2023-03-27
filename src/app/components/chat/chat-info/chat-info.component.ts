@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {FireDatabaseService} from "../../services/fireDatabase.service";
-import {Users} from "../../model/users";
+import {FireDatabaseService} from "../../../services/fireDatabase.service";
+import {Users} from "../../../model/users";
 import {Observable} from "rxjs";
 
 @Component({

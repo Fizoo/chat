@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {debounceTime, distinctUntilChanged} from "rxjs";
-import {FireDatabaseService} from "../../services/fireDatabase.service";
+import {FireDatabaseService} from "../../../services/fireDatabase.service";
 
 @Component({
   selector: 'app-search',

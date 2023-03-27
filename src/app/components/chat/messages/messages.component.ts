@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FireDatabaseService} from "../../services/fireDatabase.service";
+import {FireDatabaseService} from "../../../services/fireDatabase.service";
 import {Observable, tap} from "rxjs";
-import {Message} from "../../model/users";
+import {Message} from "../../../model/users";
 
 @Component({
   selector: 'app-messages',

@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {FirebaseAuthService} from "../../services/firebaseAuth.service";
+import {FirebaseAuthService} from "../../../../services/firebaseAuth.service";
 import {Observable} from "rxjs";
 import {AngularFireStorage} from "@angular/fire/compat/storage";
-import {Message} from "../../model/users";
+import {Message} from "../../../../model/users";
 
 @Component({
   selector: 'app-message',
