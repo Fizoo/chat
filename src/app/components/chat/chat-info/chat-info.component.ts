@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FireDatabaseService} from "../../../services/fireDatabase.service";
-import {Users} from "../../../model/users";
+import {User} from "../../../model/users";
 import {Observable} from "rxjs";
 
 @Component({
@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
   styleUrls: ['./chat-info.component.scss']
 })
 export class ChatInfoComponent {
-  user$:Observable<Users>
+  user$:Observable<User>
   constructor(private dataService: FireDatabaseService){
     this.user$=this.dataService.selectedUser$
   }

@@ -1,11 +1,11 @@
 <div class="input">
-  <input type="text" placeholder="Type something...">
+  <input type="text" placeholder="Type something..." [(ngModel)]="message" >
   <div class="send">
     <img src="../../../../assets/img/attach.png" alt="">
     <input type="file"  id="file">
     <label for="file">
       <img src="../../../../assets/img/img.png" alt="">
     </label>
-    <button>Send</button>
+    <button [disabled]="!message" (click)="sendMessage()">Send</button>
   </div>
 </div>

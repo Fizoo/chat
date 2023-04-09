@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, debounceTime, map, Observable, Subject, tap} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {Message, Users} from "../model/users";
+import {Message, User} from "../model/users";
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,11 @@ import {Message, Users} from "../model/users";
 export class FireDatabaseService {
 
   readonly url='https://chatapp-91814-default-rtdb.firebaseio.com'
-  private _users$ =new BehaviorSubject<Users[]>([]);
-  public userData:Users[]=[]
+  private _users$ =new BehaviorSubject<User[]>([]);
+  public userData:User[]=[]
   search$=new BehaviorSubject<string>('');
   messageOfUser$=new Subject<Message[]>()
-  selectedUser$=new Subject<Users>()
+  selectedUser$=new Subject<User>()
 
   readonly user$=this._users$.asObservable()
 
@@ -33,8 +33,8 @@ export class FireDatabaseService {
 
   }
 
-  fetchAllUsers():Observable<Users[]>{
-    return this.http.get<Users[]>(`${this.url}/users.json`)
+  fetchAllUsers():Observable<User[]>{
+    return this.http.get<User[]>(`${this.url}/users.json`)
     .pipe(
         map((response:{[key:string]:any})=>{
          return  Object.keys(response)
@@ -45,7 +45,7 @@ export class FireDatabaseService {
         }))
   }
 
-  getSelectedUserMessages(userId:string):any{
+  getSelectedUserMessages(userId:number):any{
     let data=this.userData.filter(user=>user.id===userId)[0].message
     this.messageOfUser$.next(data)
   }
@@ -56,8 +56,8 @@ export class FireDatabaseService {
 
 
 
-  create(users:Users):Observable<Users>{
-    return this.http.post<Users>(`${this.url}/users.json`, users)
+  create(users:User):Observable<User>{
+    return this.http.post<User>(`${this.url}/users.json`, users)
   }
 
 }

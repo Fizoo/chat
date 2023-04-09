@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy,  Component, Input} from '@angular/core';
-import {Users} from "../../../model/users";
+import {User} from "../../../model/users";
 
 @Component({
   selector: 'app-chats',
@@ -8,7 +8,7 @@ import {Users} from "../../../model/users";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChatsComponent {
-  @Input() users:Users[]
+  @Input() users:User[]
   @Input() search:string|null
 
 

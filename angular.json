@@ -119,6 +119,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "chat:build:production",
+            "firebaseProject": "chatapp-91814",
+            "firebaseHostingSite": "chatapp-91814"
+          }
         }
       }
     }

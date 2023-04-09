@@ -1,12 +1,12 @@
 import {Directive, HostListener, Input} from '@angular/core';
-import {Users} from "../model/users";
+import {User} from "../model/users";
 import {FireDatabaseService} from "../services/fireDatabase.service";
 
 @Directive({
   selector: '[appSelectedUser]'
 })
 export class SelectedUserDirective {
-  @Input('appSelectedUser') user: Users
+  @Input('appSelectedUser') user: User
 
   constructor(private database: FireDatabaseService) {
   }

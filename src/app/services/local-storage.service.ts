@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 export enum LocalStorageKeys {
   IMG = 'imgOwner',
   AUTH = 'auth',
-  TOKEN='token'
+  TOKEN='token',
+  USERS='users'
 }
 
 @Injectable({

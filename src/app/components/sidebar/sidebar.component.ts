@@ -1,7 +1,9 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Users} from "../../model/users";
+import {User} from "../../model/users";
 import {Observable} from "rxjs";
 import {FireDatabaseService} from "../../services/fireDatabase.service";
+import {Store} from "@ngrx/store";
+import {UserSelectors} from "../../store/selectors";
 
 @Component({
   selector: 'app-sidebar',
@@ -11,24 +13,27 @@ import {FireDatabaseService} from "../../services/fireDatabase.service";
 })
 export class SidebarComponent implements OnInit{
 
-  users$:Observable< Users[] >
+  users$:Observable< User[] >
   search$:Observable< string>
 
-  constructor(private dataService:FireDatabaseService) {
+  constructor(private dataService:FireDatabaseService,
+              private store:Store) {
   }
 
   ngOnInit(): void {
     this.search$=this.dataService.search$
-    this.users$=this.dataService.user$
-    const user:Users={
+    this.users$=this.store.select(UserSelectors.getAllUsers)
+    //this.users$=this.dataService.user$
+  /*  const user:User={
       name:'Sofi',
       id:'1',
       photoUrl:'',
       message:[{
         text:'Kitten',
-        id:'1'
+        id:'1',
+        time: new Date().getTime(),
       }]
-    }
+    }*/
    // this.dataService.create(user).subscribe()
   }
 

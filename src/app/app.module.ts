@@ -8,7 +8,7 @@ import {MainPageComponent} from './pages/main-page/main-page.component';
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
-import {environment} from "../environment";
+import {environment} from "../environments/environment";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptor} from "./services/auth.interceptor";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -26,6 +26,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import {metaReducers, reducers} from "./store";
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 
 const INTERCEPTORS_PROVIDERS:Provider = {
@@ -53,7 +55,7 @@ const INTERCEPTORS_PROVIDERS:Provider = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     HttpClientModule,
     FormsModule,
@@ -63,6 +65,8 @@ const INTERCEPTORS_PROVIDERS:Provider = {
     }),
     EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
 
   ],
   providers: [INTERCEPTORS_PROVIDERS],

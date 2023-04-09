@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Users} from "../model/users";
+import {User} from "../model/users";
 import {FireDatabaseService} from "../services/fireDatabase.service";
 
 @Pipe({
@@ -11,7 +11,7 @@ export class FilterPipe implements PipeTransform {
   constructor(private database:FireDatabaseService) {
   }
 
-  transform(users: Users[], search:string|null=''): Users[] {
+  transform(users: User[], search:string|null=''): User[] {
     if(!!search){
       return users.filter(el=>el.name.toLowerCase().includes(search.toLowerCase()))
     }

@@ -23,10 +23,17 @@
     #file{
       display: none;
     }
-    button{
+    button {
       color: white;
       padding: 10px 15px;
-      background: v.$bg-main;
+      background: v.$bg-main; // передбачаючи, що змінна $bg-main визначена десь вище
+      cursor: pointer;
+      &:not(:disabled):hover {
+        background: #6285f6;
+      }
+      &:disabled {
+        opacity: 0.5;
+      }
     }
   }
 }

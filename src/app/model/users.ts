@@ -1,11 +1,12 @@
-export interface Users{
+export interface User {
   name: string
-  id:string
+  id:number
   photoUrl:string
-  message:Message[]
+  message:Message[],
 }
 
 export interface Message {
   text:string
-  id:string
+  id:number
+  time:number
 }
