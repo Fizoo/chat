@@ -19,7 +19,6 @@ const routes:Routes=[
     LoginComponent,
     AdminComponent,
     RegisterComponent,
-
     ErrorComponent,
   ],
   imports: [

@@ -35,6 +35,8 @@ export class RegisterComponent implements OnInit{
 
   uploadFile(event:any) {
     const file = event.target.files[0];
+    console.log(file)
+
     const filePath = `avatar/${file.name}`;
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);

@@ -27,7 +27,6 @@ export class FirebaseAuthService {
 
     this.isAuth$.subscribe((isAuth) => this.localStorage.set(LocalStorageKeys.AUTH, isAuth));
 
-
     this.imgUrl$.subscribe((url) => this.localStorage.set(LocalStorageKeys.IMG, url))
   }
 
@@ -39,6 +38,7 @@ export class FirebaseAuthService {
         const token = el.user?.multiFactor?.user.accessToken
         if (token) {
           this.localStorage.set(LocalStorageKeys.TOKEN, token)
+          console.log(token)
         }
         this.isAuth$.next(true);
         this.alert.addAlert('Login success!!!')

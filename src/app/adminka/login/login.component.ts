@@ -29,7 +29,10 @@ export class LoginComponent implements OnInit {
 
     if (this.form.valid) {
       let {email, password} = this.form.value
-      this.fireAuth.login(email, password).subscribe(() => this.router.navigate(['/'])
+      this.fireAuth.login(email, password).subscribe({
+        next: () => this.router.navigate(['/']),
+        error:(error)=>console.log(error)
+      }
       )
     }
 

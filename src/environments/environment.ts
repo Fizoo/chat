@@ -1,13 +1,12 @@
 export const environment = {
   firebase: {
-    projectId: 'chatapp-91814',
-    appId: '1:832510557497:web:be8e1c9595b83e1cb43ce8',
-    databaseURL: 'https://chatapp-91814-default-rtdb.firebaseio.com',
-    storageBucket: 'chatapp-91814.appspot.com',
-    locationId: 'us-central',
-    apiKey: 'AIzaSyA65ySbmXg-NVg4tjLHntwR-jiKEElqzfM',
-    authDomain: 'chatapp-91814.firebaseapp.com',
-    messagingSenderId: '832510557497',
+    projectId: 'chatapp-bdaf7',
+    appId: '1:674318235410:web:3bfd0400ad335f160065cb',
+    storageBucket: 'chatapp-bdaf7.appspot.com',
+    locationId: 'europe-west',
+    apiKey: 'AIzaSyDUUV9JITQXguDaux2YVDw-Y6reB9bCuwI',
+    authDomain: 'chatapp-bdaf7.firebaseapp.com',
+    messagingSenderId: '674318235410',
   },
   production: false,
 

@@ -6,9 +6,30 @@
           "chatapp-91814"
         ]
       }
+    },
+    "chatapp-29dd0": {
+      "hosting": {
+        "chat": [
+          "chatapp-29dd0"
+        ]
+      }
+    },
+    "chatapp-b2fd9": {
+      "hosting": {
+        "chat": [
+          "chatapp-b2fd9"
+        ]
+      }
+    },
+    "chatapp-bdaf7": {
+      "hosting": {
+        "chat": [
+          "chatapp-bdaf7"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "chatapp-91814"
+    "default": "chatapp-bdaf7"
   }
 }

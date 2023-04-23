@@ -28,6 +28,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import {metaReducers, reducers} from "./store";
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
+
+
 
 
 const INTERCEPTORS_PROVIDERS:Provider = {
@@ -67,6 +72,9 @@ const INTERCEPTORS_PROVIDERS:Provider = {
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
+
 
   ],
   providers: [INTERCEPTORS_PROVIDERS],
